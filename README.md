@@ -1,9 +1,10 @@
 ### hapi-auth-stormpath
 
+[![Build Status](https://travis-ci.org/diorahman/hapi-auth-stormpath.svg?branch=master)](https://travis-ci.org/diorahman/hapi-auth-stormpath)
+
 #### Stormpath API authentication
 
 It uses `application.authenticationApiRequest` of Stormpath API.
-
 
 #### Example
 
