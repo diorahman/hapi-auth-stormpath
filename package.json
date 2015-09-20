@@ -1,0 +1,37 @@
+{
+  "name": "hapi-auth-stormpath",
+  "version": "1.0.1",
+  "description": "Stormpath authentication plugin",
+  "main": "lib/index.js",
+  "dependencies": {
+    "boom": "2.x.x",
+    "stormpath": "0.12.x"
+  },
+  "devDependencies": {
+    "code": "^1.5.0",
+    "hapi": "10.x.x",
+    "lab": "^5.17.0"
+  },
+  "scripts": {
+    "test": "lab -r console -t 100 -a code -m 10000"
+  },
+  "keywords": [
+    "hapi",
+    "plugin",
+    "auth",
+    "stormpath"
+  ],
+  "author": "Dhi Aurrahman <diorahman@rockybars.com>",
+  "license": "MIT",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diorahman/hapi-auth-stormpath.git"
+  },
+  "bugs": {
+    "url": "https://github.com/diorahman/hapi-auth-stormpath/issues"
+  },
+  "homepage": "https://github.com/diorahman/hapi-auth-stormpath#readme"
+}
