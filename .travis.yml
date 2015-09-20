@@ -1,8 +1,7 @@
 language: node_js
 node_js:
-- '0.12'
+- '4'
 before_install:
 - openssl aes-256-cbc -K $encrypted_40b51609140a_key -iv $encrypted_40b51609140a_iv
   -in config.js.enc -out config.js -d
-- openssl aes-256-cbc -K $encrypted_40b51609140a_key -iv $encrypted_40b51609140a_iv
-  -in key.enc -out key -d
+- pwd && ls
