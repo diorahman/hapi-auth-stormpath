@@ -155,4 +155,39 @@ describe ('Stormpath auth plugin', function (){
       });
     });
   });
+  
+  it ('should return an error reply on invalid auth, where the account is disabled', function (done) {
+    var server = new Hapi.Server();
+    server.connection();
+    server.register({
+      register: require('../'),
+      options: require(__dirname + '/../config')
+    }, function(err) {
+      if (err) {
+        return done(err);
+      }
+      server.auth.strategy('default', 'stormpath');
+      server.route({
+        method: 'GET', path: '/stormpath',
+        handler: function (request, reply) {
+          reply('success');
+        },
+        config: {
+          auth: 'default'
+        }
+      });
+      
+      var testApiKey3 = require(__dirname + '/../config').testApiKey3;
+      var request = {
+        method: 'GET', url : 'http://example.com:8080/stormpath',
+        headers: {
+          authorization: 'Basic ' + new Buffer(testApiKey3.id + ':' + testApiKey3.secret).toString('base64')
+        }
+      }
+      server.inject(request, function(res) {
+        expect(res.statusCode).to.equal(401);
+        done();    
+      });
+    });
+  });
 });
