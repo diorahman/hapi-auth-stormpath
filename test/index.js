@@ -13,7 +13,7 @@ describe ('Stormpath auth plugin', function (){
     server.connection();
     server.register({
       register: require('../'),
-      options: require('./config')
+      options: require(__dirname + '/../config')
     }, function(err) {
       expect(err).to.not.exist();
       done();
@@ -78,8 +78,8 @@ describe ('Stormpath auth plugin', function (){
     server.register({
       register: require('../'),
       options: { 
-        apiKey: require('./config').apiKey,
-        appHref: require('./config').appHref
+        apiKey: require(__dirname + '/../config').apiKey,
+        appHref: require(__dirname + '/../config').appHref
       }
     }, function(err) {
       expect(err).to.not.exist();
@@ -92,7 +92,7 @@ describe ('Stormpath auth plugin', function (){
     server.connection();
     server.register({
       register: require('../'),
-      options: require('./config')
+      options: require(__dirname + '/../config')
     }, function(err) {
       expect(err).to.not.exist();
       server.auth.strategy('default', 'stormpath');
@@ -106,7 +106,7 @@ describe ('Stormpath auth plugin', function (){
         }
       });
       
-      var testApiKey1 = require('./config').testApiKey1;
+      var testApiKey1 = require(__dirname + '/../config').testApiKey1;
       var request = {
         method: 'GET', url : 'http://example.com:8080/stormpath',
         headers: {
@@ -126,7 +126,7 @@ describe ('Stormpath auth plugin', function (){
     server.connection();
     server.register({
       register: require('../'),
-      options: require('./config')
+      options: require(__dirname + '/../config')
     }, function(err) {
       if (err) {
         return done(err);
@@ -142,7 +142,7 @@ describe ('Stormpath auth plugin', function (){
         }
       });
       
-      var testApiKey2 = require('./config').testApiKey2;
+      var testApiKey2 = require(__dirname + '/../config').testApiKey2;
       var request = {
         method: 'GET', url : 'http://example.com:8080/stormpath',
         headers: {
