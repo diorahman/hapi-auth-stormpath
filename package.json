@@ -1,6 +1,6 @@
 {
   "name": "hapi-auth-stormpath",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Stormpath authentication plugin",
   "main": "lib/index.js",
   "dependencies": {
