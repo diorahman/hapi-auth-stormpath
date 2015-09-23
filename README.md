@@ -22,7 +22,7 @@ server.register({
 
 ```
 
-Or using the using the API key object (the `apiKey`),
+Or using the API key object (the `apiKey`),
 
 ```js
 
