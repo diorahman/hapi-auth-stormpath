@@ -225,7 +225,7 @@ describe('Stormpath auth plugin', function () {
         });
     });
 
-    it('should return a reply on successful auth', function (done) {
+    it('should return forbidden reply on test group fail', function (done) {
 
         process.env.TEST_GROUP_FAIL = '1';
         var server = new Hapi.Server();
