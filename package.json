@@ -13,7 +13,7 @@
     "lab": "^5.17.0"
   },
   "scripts": {
-    "test": "lab -r console -t 100 -a code -m 10000"
+    "test": "lab -r console -t 100 -a code -m 10000 -L"
   },
   "keywords": [
     "hapi",
