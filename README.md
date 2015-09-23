@@ -4,7 +4,7 @@
 
 #### Stormpath API authentication
 
-It uses `application.authenticationApiRequest` of Stormpath API.
+It uses `application.authenticationApiRequest` of Stormpath API. We can load the key from path or defined it as an object. We can also take advantage the group names as `scope` in a route config's `auth.scope`.
 
 #### Example
 
