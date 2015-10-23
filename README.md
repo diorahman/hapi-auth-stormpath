@@ -15,7 +15,7 @@ Load the key from a predefined path (the `appKeyPath`)
 server.register({
   register: require('../'),
   options: {
-    appKeyPath: __dirname + '/data/key',
+    apiKeyPath: __dirname + '/data/key',
     appHref: 'https://your/stormpath/app/url'
   }
 }, function(err) {}
@@ -42,4 +42,3 @@ server.register({
 #### License
 
 MIT
-
