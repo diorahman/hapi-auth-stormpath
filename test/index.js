@@ -107,6 +107,42 @@ describe('Stormpath auth plugin', function () {
         });
     });
 
+    it('should failed to load the plugin using manual apiKey setup with invalid key (not from file)', function (done) {
+
+        var server = new Hapi.Server();
+        server.connection();
+        server.register({
+            register: require('../'),
+            options: {
+                apiKey: require(__dirname + '/../config').invalidApiKey,
+                appHref: require(__dirname + '/../config').appHref
+            }
+
+        }, function (err) {
+
+            expect(err).to.exist();
+            done();
+        });
+    });
+
+    it('should failed to load the plugin using manual apiKey setup with invalid href (not from file)', function (done) {
+
+        var server = new Hapi.Server();
+        server.connection();
+        server.register({
+            register: require('../'),
+            options: {
+                apiKey: require(__dirname + '/../config').apiKey,
+                appHref: 'http://omama.com'
+            }
+
+        }, function (err) {
+
+            expect(err).to.exist();
+            done();
+        });
+    });
+
     it('should return a reply on successful auth', function (done) {
 
         var server = new Hapi.Server();
